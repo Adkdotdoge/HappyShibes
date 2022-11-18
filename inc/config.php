@@ -15,11 +15,11 @@ session_start();
     $config["dbuser"] = ""; // your DB username
     $config["dbpass"] = ""; // your DB password
 
-    $config["mail_name_from"] = "HappyShibes"; //name to show on all emails sent
+    $config["mail_name_from"] = "ShibeShip"; //name to show on all emails sent
     $config["email_from"] = "store@localhost"; // email to show and reply on all emails sent
 
     $config["admin_user"] = "wow"; // your admin user
-    $config["admin_pass"] = ""; // your admin password
+    $config["admin_pass"] = "doggy"; // your admin password
 
     $config["demo"] = 0; // to active demo mode change to 1, or 0 to disable
     $config["fiat"] = "usd"; // to active fiat option convertion insert and fiat currency eur/usd/jpy
