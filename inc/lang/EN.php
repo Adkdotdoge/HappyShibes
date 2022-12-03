@@ -110,15 +110,15 @@ $lang["sad"] = "Much Sad!";
 $lang["confirm"] = "Wof, yes!";
 $lang["cancel"] = "Much, No!";
 $lang["areusure"] = "Are you sure you want to remove?";
-$lang["verify_account"] = "Please verify your email to activate your Shibe Account!";
-$lang["exists_account"] = "The Email you are using, alredy exists on our records! You can recover your password!";
+$lang["verify_account"] = "Please verify your email to activate your ShibeShip Account!";
+$lang["exists_account"] = "The Email you are trying to use already exists in our records! Please recover your password!";
 
 $lang["payindoge"] = "Pay in Doge!";
 $lang["correct_amount"] = "
-You have to pay the correct amount of Doge to that Address to be auto validated.<br>
-If you pay more Doge or less Doge you will have to notify us by email telling the Dogecoin transaction ID and Order Number to us manually verify and be able to refund you minus the gas fees.<br>
-The payment cannot be auto validated and you will loose your Doge sent!<br>
-You can close this window at anytime.<br>
+Please send the exact amount of Doge to this Address for the payment to be automaticly validated.<br>
+If the Payment cannot be auto validated you may lose your Dogecoin!<br>
+If you pay more Doge or less Doge you will need to contact the seller - please avoid this by sending the correct amount.<br>
+You can close this window at anytime, you will also recieve an email with the payment address and amount.<br>
 The payment will be checked in background automaticly.<br>
 After 3 verifications the payment status will change to verifyed and you will recive an email to notify you.<br>
 You will have 1 day to make the payment, after that the order will be canceled.";
@@ -163,6 +163,7 @@ $lang["tax_id"] = "Tax ID";
 $lang["address"] = "Address";
 $lang["postal_code"] = "Postal Code";
 $lang["city"] = "City";
+$lang["state"] = "State", //will need to make US orders easier. 
 $lang["phone"] = "Phone";
 
 $lang["login"] = "Login";
