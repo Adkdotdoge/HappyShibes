@@ -92,13 +92,13 @@ exit();
               // we send an email to the Shibe to send a copy to pay
               $logo = "<img src='https://shibeship.com/img/shibeship.png' style='width:100%' /><br><br>";
               $mail_subject = "Much Wow! Such Doge Payment Waiting for ".$row["title"]."!";
-              $mail_message = $logo."Hello ".$d->CleanString($_POST["name"]).",<br><br>Thank you for your recent purchase. Please make the an total payment of<br><br>Ð ".$amount." <br><br>to the address<br><br> ".trim($ldoge->public)."<br><br> After payment you will recive a confirmation by the seller.<br><br>".$products_email."<br><br>Much Thanks!";
+              $mail_message = $logo."Hello ".$d->CleanString($_POST["name"]).",<br><br>Thank you for your recent purchase!  Please make a total payment of<br><br>Ð ".$amount." <br><br>to the address<br><br> ".trim($ldoge->public)."<br><br> After payment has been process you will recive a confirmation from the seller.<br><br>".$products_email."<br><br>Much Thanks!";
               $d->SendEmail($config["mail_name_from"],$config["email_from"],$d->CleanEmail($_POST["email"]),$mail_subject,$mail_message);
 
 
                    ?>
-                    <div class="alert alert-warning" role="alert" style="">
-                      Scan the QR code or copy the Doge Address to pay the exact amount of <b>Ð <?php if ($row["doge"] == 0){ echo $d->FiatDogeRates($row["fiat"], $config["fiat"]); }else{ number_format((float)($row["doge"]), 2, '.', ''); };?></b> to buy it.
+                    <div class="alert alert-warning" role="alert" style="">To Complete your purchase <br> 
+                      Scan the QR code or copy the Doge Address to pay the exact amount of <b>Ð <?php if ($row["doge"] == 0){ echo $d->FiatDogeRates($row["fiat"], $config["fiat"]); }else{ number_format((float)($row["doge"]), 2, '.', ''); };?></b>.
                       You can close the browser after payment.
                     </div>
                   <div class="card-body" style="text-align: center">
@@ -108,14 +108,14 @@ exit();
                   <?php }else{  ?>
 
 <div class="alert alert-warning" role="alert">
-  To buy it, please fill the fields below and click on <b>Much Buy</b> button below to generate a Doge Address for you to be able to pay.
+  To place your order, please fill the fields below and click on <b>Much Buy</b>, a unique Doge Address will be generated for you to be able to send your payment.
 </div>
                 <form method="post" action="?d=<?php echo $_GET["d"]; ?>&product=<?php echo $_GET["product"]; ?>&do=buy">
                   <input type="hidden" name="action" value="save" />
                   <div class="row">
                     <div class="col-sm-12" style="display: none">
                       <div class="form-group">
-                        <label>Your <?php echo $lang["doge_address"]; ?> to recive refunds, if needed.</label>
+                        <label>Your <?php echo $lang["doge_address"]; ?> to receive refunds, if needed.</label>
                         <input type="text" name="doge_address" class="form-control" value="<?php if (isset($row["doge_address"])){ echo $row["doge_address"]; }; ?>" placeholder="">
                       </div>
                     </div>
