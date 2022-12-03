@@ -129,7 +129,7 @@ if(isset($_POST["action"])){
                         <?php
                             $dbsub = $pdo->query("SELECT DISTINCT category FROM tax order by category ASC");
                             while ($rowsub = $dbsub->fetch()) {
-                        ?>
+                        ?> //in this version there is an error here due to a missing database table causes the page not to load.
                                 <option value="<?php echo $rowsub["category"];?>" ><?php echo $rowsub["category"];?></option>
                         <?php
                         };
