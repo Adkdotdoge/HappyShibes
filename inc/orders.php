@@ -23,7 +23,7 @@ if(isset($_GET["do"])){
       // We Show the private Key
 ?>
 <div class="alert alert-secondary" role="alert">
-  <i class="fa fa-lock" aria-hidden="true"></i> Ask the Buyer the <b>PIN</b> code for you to be able to access the wallet Private Key
+  <i class="fa fa-lock" aria-hidden="true"></i> Ask the Buyer for the <b>PIN</b> code they created when placing their order. You will need the pin to access the wallet Private Key
 </div>
  <form method="post" action="?d=<?php echo $_GET["d"]; ?>&id=<?php echo $_GET["id"]; ?>&do=private">
                   <input type="hidden" name="action" value="save" />
@@ -33,7 +33,7 @@ if(isset($_GET["do"])){
                         <label for="pin">PIN code</label>
                         <input type="password" maxlength="255" name="pin" class="form-control is-invalid" value="" placeholder="" required="required">
                         <div id="pin" class="invalid-feedback">
-                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Enter the <b>PIN</b> Code. Without the <b>PIN</b> the money is lost forever.
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Enter the <b>PIN</b> Code. Without the <b>PIN</b> the Doge is lost forever.
                         </div>
                       </div>
                     </div>
@@ -53,7 +53,7 @@ if (isset($products["id"])){
 
                     <div class="col-sm-12" style="display: none">
                       <div class="form-group">
-                        <label>Your <?php echo $lang["doge_address"]; ?> to recive refunds, if needed.</label>
+                        <label>Your <?php echo $lang["doge_address"]; ?> to receive refunds, if needed.</label>
                         <input type="text" name="doge_address" class="form-control" value="<?php if (isset($orders["doge_address"])){ echo $orders["doge_address"]; }; ?>" placeholder="" disabled="disabled">
                       </div>
                     </div>
@@ -118,15 +118,15 @@ if (isset($products["id"])){
 ?>
 <div class="alert alert-dark" role="alert">
   Use this private key to be able to access your Dogecoin Wallet.<br><br>
-  You will have to install Dogecoin Core Wallet from here <a href='https://dogecoin.com/wallets/'>dogecoin.com/wallets/</a> click on <b>File->Import Private Key</b>, insert your Private Key below and import to imidiatly have acess to your money.<br><br>
-  We do not recomend leaving Doge in this wallet because is encrypted with the buyer PIN on our DataBase, so you can simple send the money to another Dogecoin Wallet that belongs to you, and will be safe.<br><br>
+  You will have to install Dogecoin Core Wallet from here <a href='https://dogecoin.com/wallets/'>dogecoin.com/wallets/</a> click on <b>File->Import Private Key</b>, insert your Private Key below and import to immediately have acess to your money.<br><br>
+  We do not recomend leaving Doge in this wallet because is encrypted with the buyer PIN stored on our DataBase, simply send the Dogecoin to another Wallet that belongs to you, and will be safe.<br><br>
   Private Key: <b><?php echo openssl_decrypt($orders["doge_private"], "AES-128-CTR", $_POST["pin"], 0, 1234567891011121); ?></b>
 </div>
  <?php
 }else{
  ?>
 <div class="alert alert-warning" role="alert">
-    PIN Code is wrong. Please make sure the order and PIN code is correct. Without the correct PIN the money is lost forever without recover.
+    PIN Code is wrong. Please make sure the order and PIN code is correct. Without the correct PIN the Doge is lost forever.
 </div>
  <?php
 }
